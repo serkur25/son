@@ -1,0 +1,143 @@
+/* Tüm elemanların kutu modelini belirle, sıfırla */
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+/* Body elemanının arka plan rengini belirle */
+body {
+	background: linear-gradient(45deg, rgba(255,175,189,.7), rgba(100,216,243,.7), rgba(234,236,198,.7), rgba(245,146,176,.7), rgba(52,219,216,.7));
+  background-size: 400% 400%;
+  animation: gradientBackground 15s ease infinite;
+}
+@keyframes gradientBackground {
+	0% {
+	  background-position: 0% 50%;
+	}
+	50% {
+	  background-position: 100% 50%;
+	}
+	100% {
+	  background-position: 0% 50%;
+	}
+}
+/* Container elemanını ortala */
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+}
+
+/* Hosgeldin başlığı için stiller */
+#hosgeldin {
+	font-size: 5rem;
+	color: #1a1a1a;
+	font-family: 'Open Sans', sans-serif;
+	animation-name: slide-down;
+	animation-duration: 2s;
+	animation-fill-mode: forwards;
+}
+
+/* Hosgeldin animasyonunu tanımla */
+@keyframes slide-down {
+	0% {
+		transform: translateY(-200%);
+	}
+	100% {
+		transform: translateY(0);
+	}
+}
+
+/* Devam et butonu için stiller */
+#devametbutonu {
+	background-color: #7b6cff;
+	color: #fff;
+	padding: 1rem 2rem;
+	border: none;
+	border-radius: 10px;
+	font-size: 1.5rem;
+	margin-top: 3rem;
+	cursor: pointer;
+	transition: background-color 0.3s ease-in-out;
+}
+
+/* Devam et butonu üzerine geldiğinde stil değişiklikleri */
+#devametbutonu:hover {
+	background-color: #120b58;
+}
+
+/* Yükleniyor animasyonunun stil tanımlamaları */
+.loader {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #e6e6e6;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	z-index: 999;
+	opacity: 0;
+	visibility: hidden;
+}
+
+/* Yükleniyor animasyonu aktif olduğunda stiller */
+.loader.active {
+	opacity: 1;
+	visibility: visible;
+}
+
+/* Yükleniyor barlarının stilleri */
+.bar {
+	width: 10px;
+	height: 40px;
+	margin-right: 2px;
+	background-color: #7b6cff;
+	display: inline-block;
+	animation-name: beat;
+	animation-duration: 0.6s;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: infinite;
+}
+
+/* Yükleniyor animasyonunu tanımla */
+@keyframes beat {
+	0% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.5);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+/* Her barın farklı animasyon gecikmesi */
+.bar1 {
+	animation-delay: 0.1s;
+}
+.bar2 {
+	animation-delay: 0.2s;
+}
+.bar3 {
+	animation-delay: 0.3s;
+}
+.bar4 {
+	animation-delay: 0.4s;
+}
+.bar5 {
+	animation-delay: 0.5s;
+}
+.bar6 {
+	animation-delay: 0.6s;
+}
+.bar7 {
+	animation-delay: 0.7s;
+}
